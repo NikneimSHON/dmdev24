@@ -26,24 +26,22 @@ public class task3Runner {
         System.out.println("Введите сторону b для второго треугольника ");
         int b2 = scan.nextInt();
 
-        isComparisonAreas(isAreaTriangle(a1,b1), isAreaTriangle(a2,b2));
+        comparisonAreas(areaTriangle(a1, b1), areaTriangle(a2, b2));
 
 
     }
 
-    public static double isAreaTriangle(double side1, double side2) {
-        return side1 * side2 * 0.5;
-    }
-
-    public static void isComparisonAreas(double area1, double area2) {
+    private static void comparisonAreas(double area1, double area2) {
         if (area1 > area2) {
             System.out.println("Площадь первого треугольника больше " + area1 + " > " + area2);
-        }
-        else if (area1 < area2) {
+        } else if (area1 < area2) {
             System.out.println("Площадь второго треугольника больше " + area1 + " < " + area2);
-        }
-        else{
+        } else {
             System.out.println("Площадь треугольников равна" + area1 + " = " + area2);
         }
+    }
+
+    private static double areaTriangle(double side1, double side2) {
+        return side1 * side2 * 0.5;
     }
 }

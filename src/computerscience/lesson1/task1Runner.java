@@ -24,8 +24,7 @@ public class task1Runner {
 
     }
 
-
-    public static void isQuarterHour(int minutes) {
+    private static void isQuarterHour(int minutes) {
         if (minutes <= 15) {
             System.out.println("The first part of the hour");
         } else if (minutes <= 30) {
@@ -37,7 +36,7 @@ public class task1Runner {
         }
     }
 
-    public static boolean isMinutesValid(int minutes) {
+    private static boolean isMinutesValid(int minutes) {
         return minutes >= 0 && minutes <= 59;
     }
 }
