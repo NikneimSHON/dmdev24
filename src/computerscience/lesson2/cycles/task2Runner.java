@@ -11,7 +11,8 @@ package computerscience.lesson2.cycles;
  */
 public class task2Runner {
     public static void main(String[] args) {
-        System.out.println(reverseNumber(-4700));
+        int number = reverseNumber(-1234567);
+        System.out.println(number);
 
 
     }
