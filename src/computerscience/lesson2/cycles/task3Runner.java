@@ -11,19 +11,18 @@ package computerscience.lesson2.cycles;
  */
 public class task3Runner {
     public static void main(String[] args) {
-        double brokerMoney = investmentCalculation(20,2);
+        double brokerMoney = investmentCalculation(20, 2);
         System.out.println("Количество денег за брокерском счету за 3 года и 2 месяца = " + brokerMoney);
         double personalMoney = moneyCalculation(20);
         System.out.println("Количество денег за своём счету за 3 года и 2 месяца = " + personalMoney);
-
 
 
     }
 
     private static double moneyCalculation(int month) {
         double money = 0;
-        for(int currentMonth = 1; currentMonth <= month; currentMonth++) {
-            money += salaryCalculate(currentMonth)*0.9;
+        for (int currentMonth = 1; currentMonth <= month; currentMonth++) {
+            money += salaryCalculate(currentMonth) * 0.9;
             money -= 300;
         }
         return money;
@@ -48,7 +47,6 @@ public class task3Runner {
 
         return salary;
     }
-
 
 
 }
