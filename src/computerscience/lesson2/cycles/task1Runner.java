@@ -9,7 +9,7 @@ package computerscience.lesson2.cycles;
  */
 public class task1Runner {
     public static void main(String[] args) {
-        System.out.println(unEvenNumbers(228910));
+        System.out.println(evenNumbers(228910));
     }
 
     private static int evenNumbers(int number) {
