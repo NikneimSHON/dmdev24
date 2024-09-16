@@ -48,5 +48,4 @@ public class task3Runner {
         return salary;
     }
 
-
 }

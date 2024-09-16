@@ -12,7 +12,9 @@ import java.util.Arrays;
 public class task1Runner {
     public static void main(String[] args) {
         int[] array = {3, 5, -6, 3, 2, -9, 0, -123};
-        System.out.println(Arrays.toString(positiveArray(array)));
+        for(int value: array){
+            System.out.println(value);
+        }
 
     }
 

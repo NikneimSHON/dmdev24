@@ -16,62 +16,59 @@ import java.util.Arrays;
 public class task3Runner {
     public static void main(String[] args) {
         int[] array = {-4, 0, 1, 9, 0, -18, 3};
-        int[][] sortArray = splitArray(array);
+        int[][] sortArray = createArray(array,calculateLengthOfArray(array));
         System.out.println(Arrays.deepToString(sortArray));
 
 
     }
 
-    private static int[][] splitArray(int[] array) {
-        int[] positiveArray = new int[countPositiveNum(array)];
-        int[] negativeArray = new int[countNegativeNum(array)];
-        int[] zeroArray = new int[countZeroNum(array)];
-        int[][] resultArray = new int[][]{positiveArray, negativeArray, zeroArray};
-
-        int indexPositiveNum = 0;
-        int indexNegativeNum = 0;
-        int indexZeroNum = 0;
-
-        for (int currentIndex = 0; currentIndex < array.length; currentIndex++) {
-            if (array[currentIndex] > 0) {
-                resultArray[0][indexPositiveNum++] = array[currentIndex];
-            } else if (array[currentIndex] < 0) {
-                resultArray[1][indexNegativeNum++] = array[currentIndex];
-            } else if (array[currentIndex] == 0) {
-                resultArray[2][indexZeroNum++] = array[currentIndex];
+    private static void printArray(int[][] array) {
+        for (int[] ints : array) {
+            for (int anInt : ints) {
+                System.out.print(anInt + " ");
             }
+            System.out.println();
         }
-        return resultArray;
+        System.out.println();
     }
 
-    private static int countPositiveNum(int[] array) {
-        int count = 0;
-        for (int vault : array) {
-            if (vault > 0) {
-                count++;
+    private static int[][] createArray(int[] array, int[][] arrayNew) {
+        int negativeCount = 0;
+        int positiveCount = 0;
+        int nullCount = 0;
+        for (int j : array) {
+            if (j < 0) {
+                arrayNew[0][negativeCount] = j;
+                negativeCount++;
+            } else if (j > 0) {
+                arrayNew[1][positiveCount] = j;
+                positiveCount++;
+            } else {
+                arrayNew[2][nullCount] = j;
+                nullCount++;
             }
         }
-        return count;
+        return arrayNew;
     }
 
-    private static int countNegativeNum(int[] array) {
-        int count = 0;
-        for (int vault : array) {
-            if (vault < 0) {
-                count++;
+    private static int[][] calculateLengthOfArray(int[] array) {
+        int negativeCount = 0;
+        int positiveCount = 0;
+        int nullCount = 0;
+        for (int j : array) {
+            if (j < 0) {
+                negativeCount++;
+            } else if (j > 0) {
+                positiveCount++;
+            } else {
+                nullCount++;
             }
         }
-        return count;
-    }
-
-    private static int countZeroNum(int[] array) {
-        int count = 0;
-        for (int vault : array) {
-            if (vault == 0) {
-                count++;
-            }
-        }
-        return count;
+        int[][] arrayNew = new int[3][];
+        arrayNew[0] = new int[negativeCount];
+        arrayNew[1] = new int[positiveCount];
+        arrayNew[2] = new int[nullCount];
+        return arrayNew;
     }
 
 }
