@@ -22,6 +22,7 @@ public class task3Runner {
 
     }
 
+
     private static void printArray(int[][] array) {
         for (int[] ints : array) {
             for (int anInt : ints) {
@@ -70,5 +71,6 @@ public class task3Runner {
         arrayNew[2] = new int[nullCount];
         return arrayNew;
     }
+
 
 }
