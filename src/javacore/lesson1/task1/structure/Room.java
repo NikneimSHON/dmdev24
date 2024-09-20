@@ -1,15 +1,22 @@
 package javacore.lesson1.task1.structure;
 
 public class Room {
-    private final boolean roomStatus;
+    private boolean roomStatus;
 
     public Room(boolean passRoom) {
         this.roomStatus = passRoom;
     }
 
-    public boolean isPassRoom() {
-        return roomStatus;
+    public Room() {
 
+    }
+
+    public boolean isRoomStatus() {
+        return roomStatus;
+    }
+
+    public void setRoomStatus(boolean roomStatus) {
+        this.roomStatus = roomStatus;
     }
 
     public void printInformation() {
