@@ -1,15 +1,6 @@
 package javacore.lesson1.task1;
 
-import javacore.lesson1.task1.structure.Flat;
-import javacore.lesson1.task1.structure.Floor;
 import javacore.lesson1.task1.structure.Home;
-import javacore.lesson1.task1.structure.Room;
-
-import javax.swing.tree.RowMapper;
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.Random;
-import java.util.Scanner;
 
 
 /**
@@ -27,8 +18,9 @@ import java.util.Scanner;
  */
 public class StructureManager {
     public static void main(String[] args) {
-        Home home = new Home(3,10);
-        printAllInformation(home);
+       Home home = new Home(3,3);
+       printAllInformation(home);
+
 
     }
 

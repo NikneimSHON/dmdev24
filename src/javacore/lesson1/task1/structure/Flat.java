@@ -3,20 +3,26 @@ package javacore.lesson1.task1.structure;
 import java.util.Random;
 
 public class Flat {
-    private int flatNumber;
-    private Room[] rooms;
+    private final int flatNumber;
+    private final Room[] rooms;
 
-    public Flat(int countRoom,int flatNumber){
-        Room[] rooms = new Room[countRoom];
-        Random random = new Random();
-        for(int currentIndex = 0; currentIndex < countRoom; currentIndex++){
-            rooms[currentIndex] = new Room(random.nextBoolean());
-        }
+    public Flat(int flatNumber,int countRoom) {
+        this.flatNumber = flatNumber;
+        this.rooms = roomsBuilder(countRoom);
+    }
+
+    public Flat(int flatNumber, Room[] rooms) {
         this.flatNumber = flatNumber;
         this.rooms = rooms;
     }
-    public Flat(){
 
+    private Room[] roomsBuilder(int countRoom) {
+        Room[] rooms = new Room[countRoom];
+        Random random = new Random();
+        for (int currentIndex = 0; currentIndex < countRoom; currentIndex++) {
+            rooms[currentIndex] = new Room(random.nextBoolean());
+        }
+        return rooms;
     }
 
     public void printInformation() {
@@ -27,15 +33,8 @@ public class Flat {
         return flatNumber;
     }
 
-    public void setFlatNumber(int flatNumber) {
-        this.flatNumber = flatNumber;
-    }
-
     public Room[] getRooms() {
         return rooms;
     }
 
-    public void setRooms(Room[] rooms) {
-        this.rooms = rooms;
-    }
 }
