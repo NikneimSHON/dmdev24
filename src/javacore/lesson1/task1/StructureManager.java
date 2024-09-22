@@ -1,5 +1,7 @@
 package javacore.lesson1.task1;
 
+import javacore.lesson1.task1.structure.Flat;
+import javacore.lesson1.task1.structure.Floor;
 import javacore.lesson1.task1.structure.Home;
 
 
@@ -18,28 +20,26 @@ import javacore.lesson1.task1.structure.Home;
  */
 public class StructureManager {
     public static void main(String[] args) {
-       Home home = new Home(3,3);
-       printAllInformation(home);
+        Home home = new Home(3, 3);
+        printAllInformation(home);
 
 
     }
 
-    private static void printAllInformation(Home home){
+    private static void printAllInformation(Home home) {
         home.printInformation();
-        for(int floorIndex = 0;floorIndex < home.getFloors().length; floorIndex++){
+        for (int floorIndex = 0; floorIndex < home.getFloors().length; floorIndex++) {
             System.out.println("-------------------------------------");
             home.getFloors()[floorIndex].printInformation();
-            for(int flatIndex = 0;flatIndex<home.getFloors()[floorIndex].getFlats().length;flatIndex++){
+            for (int flatIndex = 0; flatIndex < home.getFloors()[floorIndex].getFlats().length; flatIndex++) {
                 home.getFloors()[floorIndex].getFlats()[flatIndex].printInformation();
-                for(int roomIndex = 0;roomIndex<home.getFloors()[floorIndex].getFlats()[flatIndex].getRooms().length;roomIndex++){
+                for (int roomIndex = 0; roomIndex < home.getFloors()[floorIndex].getFlats()[flatIndex].getRooms().length; roomIndex++) {
                     home.getFloors()[floorIndex].getFlats()[flatIndex].getRooms()[roomIndex].printInformation();
                 }
 
             }
         }
     }
-
-
 
 
 }

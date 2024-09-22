@@ -14,7 +14,7 @@ public class task2Runner {
 
     }
 
-    public static String editLine(String line) {
+    private static String editLine(String line) {
         String replaceLine = line.replaceAll(" ", "");
 
         StringBuilder resultLine = new StringBuilder();
