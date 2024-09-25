@@ -1,7 +1,4 @@
 package javacore.lesson1.task1;
-
-import javacore.lesson1.task1.structure.Flat;
-import javacore.lesson1.task1.structure.Floor;
 import javacore.lesson1.task1.structure.Home;
 
 

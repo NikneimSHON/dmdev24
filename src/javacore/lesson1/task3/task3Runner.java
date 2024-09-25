@@ -1,7 +1,4 @@
 package javacore.lesson1.task3;
-
-import java.util.Arrays;
-
 /**
  * Дана строка с текстом, в котором есть цифры от 0 до 9.
  * Написать 2 метода:
