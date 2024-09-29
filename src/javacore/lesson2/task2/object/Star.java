@@ -34,7 +34,6 @@ public class Star extends SpaceObject implements WithEnergy {
                 getNameObject(), temperature, brightnessLevel, super.toString());
     }
 
-
     @Override
     public void description() {
         System.out.println("Звезды - это огромные, светящиеся шарообразные тела, состоящие в основном из водорода и гелия, " +

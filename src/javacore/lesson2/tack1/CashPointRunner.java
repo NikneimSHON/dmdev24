@@ -1,4 +1,5 @@
 package javacore.lesson2.tack1;
+
 /**
  * Задание 1
  * Создать класс, описывающий банкомат.
@@ -13,7 +14,7 @@ package javacore.lesson2.tack1;
  */
 public class CashPointRunner {
     public static void main(String[] args) {
-        CashPoint cashPoint = new CashPoint(0,0,0);
+        CashPoint cashPoint = new CashPoint(0, 0, 0);
         cashPoint.depositMoney(100);
         cashPoint.depositMoney(1);
         cashPoint.withdrawMoney(8);
@@ -22,6 +23,5 @@ public class CashPointRunner {
         cashPoint.withdrawMoney(400);
         cashPoint.depositMoney(1030);
         System.out.println(cashPoint);
-
     }
 }

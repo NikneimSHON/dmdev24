@@ -6,7 +6,7 @@ public abstract class SpaceObject {
     private final String nameObject;
     private final Double size;
 
-    public SpaceObject(Double massObject, TypeObject typeObject, String NameObject,Double size) {
+    public SpaceObject(Double massObject, TypeObject typeObject, String NameObject, Double size) {
         this.massObject = massObject;
         this.typeObject = typeObject;
         this.nameObject = NameObject;
@@ -27,7 +27,6 @@ public abstract class SpaceObject {
             System.out.println("массы равны");
         }
     }
-
 
     abstract public void description();
 
@@ -52,7 +51,5 @@ public abstract class SpaceObject {
     public Double getSize() {
         return size;
     }
-
-
 
 }

@@ -1,7 +1,7 @@
 package javacore.lesson2.tack1;
 
 public enum MoneyType {
-    SMALL(10, "Small money" ),
+    SMALL(10, "Small money"),
     MEDIUM(20, "Medium money"),
     LARGE(50, "Large money");
 
@@ -16,6 +16,7 @@ public enum MoneyType {
     public int getValue() {
         return value;
     }
+
     public String getDescription() {
         return description;
     }

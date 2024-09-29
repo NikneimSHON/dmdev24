@@ -1,6 +1,5 @@
 package javacore.lesson2.tack1;
 
-//ДОДЕЛАТЬ ВЫВОД КУПЮР
 public class CashPoint {
     private final Banknote[] banknote;
     private Integer countMoney;
@@ -46,7 +45,7 @@ public class CashPoint {
         Banknote smallBanknote = getSmallBanknote();
         Banknote mediumBanknote = getMediumBanknote();
         Banknote largeBanknote = getLargeBanknote();
-        Integer[] countBanknote = {0,0,0};
+        Integer[] countBanknote = {0, 0, 0};
         if (getCountMoney() >= amount) {
             while (amount > 0) {
                 while (largeBanknote.getCount() > 0 && amount >= largeBanknote.getDenomination().getValue()) {
@@ -68,8 +67,8 @@ public class CashPoint {
 
                 System.out.println("Операция успешна");
                 setCountMoney(getCountMoney() - sum);
-                System.out.println("Сумма выдана купюрами " + largeBanknote.getDenomination().getValue() + " в размере " + countBanknote[0] + "шт" );
-                System.out.println("Сумма выдана купюрами " + mediumBanknote.getDenomination().getValue() + " в размере " + countBanknote[1] + "шт" );
+                System.out.println("Сумма выдана купюрами " + largeBanknote.getDenomination().getValue() + " в размере " + countBanknote[0] + "шт");
+                System.out.println("Сумма выдана купюрами " + mediumBanknote.getDenomination().getValue() + " в размере " + countBanknote[1] + "шт");
                 System.out.println("Сумма выдана купюрами " + smallBanknote.getDenomination().getValue() + " в размере " + countBanknote[2] + "шт");
                 System.out.println("Текущий баланс " + getCountMoney() + "\n");
                 System.out.println("------------");
@@ -85,13 +84,12 @@ public class CashPoint {
 
     @Override
     public String toString() {
-        return "{ Текующий баланс " + getCountMoney()+ "\n" +
+        return "{ Текующий баланс " + getCountMoney() + "\n" +
                 getSmallBanknote().toString() +
                 getMediumBanknote().toString() +
                 getLargeBanknote().toString() +
                 "}";
     }
-
 
     private Banknote getSmallBanknote() {
         return banknote[0];
@@ -112,6 +110,5 @@ public class CashPoint {
     private void setCountMoney(Integer countMoney) {
         this.countMoney = countMoney;
     }
-
 
 }

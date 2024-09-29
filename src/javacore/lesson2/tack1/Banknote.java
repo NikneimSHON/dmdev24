@@ -28,7 +28,4 @@ public class Banknote {
                 ", Value: " + denomination.getValue() + "\n";
     }
 
-
-
-
 }

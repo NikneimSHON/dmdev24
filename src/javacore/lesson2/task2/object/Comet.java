@@ -21,7 +21,6 @@ public class Comet extends SpaceObject {
         }
     }
 
-
     @Override
     public void description() {
         System.out.println("Комета — это небольшое небесное тело, состоящее из льда, " +

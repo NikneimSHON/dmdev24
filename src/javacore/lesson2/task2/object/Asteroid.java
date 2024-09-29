@@ -27,7 +27,6 @@ public class Asteroid extends SpaceObject {
                 getNameObject(), discoveryYear, super.toString());
     }
 
-
     public Integer getDiscoveryYear() {
         return discoveryYear;
     }
