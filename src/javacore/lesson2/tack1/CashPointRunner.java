@@ -21,7 +21,7 @@ public class CashPointRunner {
         cashPoint.depositMoney(300);
         cashPoint.withdrawMoney(400);
         cashPoint.depositMoney(1030);
-        System.out.println(cashPoint.toString());
+        System.out.println(cashPoint);
 
     }
 }
