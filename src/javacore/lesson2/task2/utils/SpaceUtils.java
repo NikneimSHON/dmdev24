@@ -1,6 +1,6 @@
 package javacore.lesson2.task2.utils;
 
-import javacore.lesson2.task2.object.SpaceObject;
+import javacore.lesson2.task2.object.SpaceAbstract;
 import javacore.lesson2.task2.object.Star;
 
 public final class SpaceUtils {
@@ -8,11 +8,11 @@ public final class SpaceUtils {
 
     }
 
-    public static Boolean isStar(SpaceObject object) {
+    public static Boolean isStar(SpaceAbstract object) {
         return (object instanceof Star);
     }
 
-    public static Double distanceCalculation(SpaceObject object1, SpaceObject object2) {
+    public static Double distanceCalculation(SpaceAbstract object1, SpaceAbstract object2) {
         return (object1.getMassObject() * object1.getTypeObject().getRank() + object2.getMassObject() * object2.getTypeObject().getRank()) * 1000;
     }
 }

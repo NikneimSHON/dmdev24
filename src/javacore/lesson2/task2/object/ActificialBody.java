@@ -2,12 +2,12 @@ package javacore.lesson2.task2.object;
 
 import javacore.lesson2.task2.interfaces.WithEnergy;
 
-public class ActificalBody extends SpaceObject implements WithEnergy {
+public class ActificialBody extends SpaceAbstract implements WithEnergy {
     private Integer countEnergy;
     private final boolean transmitInfo;
     private final Integer launchYear;
 
-    public ActificalBody(Double massObject, String NameObject, Double size, boolean transmitInfo, Integer launchYear) {
+    public ActificialBody(Double massObject, String NameObject, Double size, boolean transmitInfo, Integer launchYear) {
         super(massObject, TypeObject.ACTIFICAL_BODY, NameObject, size);
         this.countEnergy = 100;
         this.transmitInfo = transmitInfo;

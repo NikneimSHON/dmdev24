@@ -1,12 +1,12 @@
 package javacore.lesson2.task2.object;
 
-public abstract class SpaceObject {
+public abstract class SpaceAbstract {
     private final Double massObject;
     private final TypeObject typeObject;
     private final String nameObject;
     private final Double size;
 
-    public SpaceObject(Double massObject, TypeObject typeObject, String NameObject, Double size) {
+    public SpaceAbstract(Double massObject, TypeObject typeObject, String NameObject, Double size) {
         this.massObject = massObject;
         this.typeObject = typeObject;
         this.nameObject = NameObject;
@@ -18,13 +18,13 @@ public abstract class SpaceObject {
         return ((size / 10) * typeObject.getRank()) * 2;
     }
 
-    public void massEquals(SpaceObject object) {
+    public void massEquals(SpaceAbstract object) {
         if (object.getMassObject() < massObject) {
-            System.out.println(getClass() + "имеет большую массу");
+            System.out.println(getNameObject() + " имеет большую массу");
         } else if (object.getMassObject() > massObject) {
-            System.out.println(object.getNameObject() + "имеет большую массу");
+            System.out.println(object.getNameObject() + " имеет большую массу");
         } else {
-            System.out.println("массы равны");
+            System.out.println(" массы равны");
         }
     }
 

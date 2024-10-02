@@ -84,7 +84,7 @@ public class CashPoint {
 
     @Override
     public String toString() {
-        return "{ Текующий баланс " + getCountMoney() + "\n" +
+        return "{ Текущий баланс " + getCountMoney() + "\n" +
                 getSmallBanknote().toString() +
                 getMediumBanknote().toString() +
                 getLargeBanknote().toString() +

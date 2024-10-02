@@ -1,6 +1,6 @@
 package javacore.lesson2.task2.object;
 
-public class Asteroid extends SpaceObject {
+public class Asteroid extends SpaceAbstract {
     private final Integer discoveryYear;
 
     public Asteroid(Double size, Double massObject, String NameObject, Integer discoveryDate) {

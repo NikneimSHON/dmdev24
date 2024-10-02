@@ -5,8 +5,8 @@ import javacore.lesson2.task2.object.*;
 public class SpaceRunner {
     public static void main(String[] args) {
 
-        ActificalBody satellite = new ActificalBody(500.0, "Communication Satellite", 0.125, true, 2021);
-        ActificalBody spaceProbe = new ActificalBody(300.0, "Mars Rover", 0.3, false, 2018);
+        ActificialBody satellite = new ActificialBody(500.0, "Communication Satellite", 0.125, true, 2021);
+        ActificialBody spaceProbe = new ActificialBody(300.0, "Mars Rover", 0.3, false, 2018);
 
         satellite.description();
         satellite.energyProduct();
@@ -63,5 +63,8 @@ public class SpaceRunner {
         System.out.println("--------------------------");
         System.out.println(SpaceUtils.distanceCalculation(asteroid1,asteroid2));
         System.out.println(SpaceUtils.isStar(sun));
+
+        sun.massEquals(asteroid1);
+        System.out.println(sun.diameterCalculate());
     }
 }

@@ -1,6 +1,6 @@
 package javacore.lesson2.task2.object;
 
-public class Comet extends SpaceObject {
+public class Comet extends SpaceAbstract {
     private final Integer orbitalTimeYear;
     private boolean haveGlow;
 

@@ -4,7 +4,7 @@ import javacore.lesson2.task2.interfaces.WithEvolution;
 
 import java.util.Random;
 
-public class Planet extends SpaceObject implements WithEvolution {
+public class Planet extends SpaceAbstract implements WithEvolution {
     private String atmosphere;
     private boolean hasLife;
 

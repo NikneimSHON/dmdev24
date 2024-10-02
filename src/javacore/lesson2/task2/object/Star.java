@@ -4,7 +4,7 @@ import javacore.lesson2.task2.interfaces.WithEnergy;
 
 import java.util.Random;
 
-public class Star extends SpaceObject implements WithEnergy {
+public class Star extends SpaceAbstract implements WithEnergy {
     private Double brightnessLevel;
     private Double temperature;
 
