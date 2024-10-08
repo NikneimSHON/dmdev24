@@ -7,11 +7,11 @@ import javacore.lesson3.tack3.enumfile.Month;
 import java.util.*;
 
 public class Cinema {
-    private final TreeMap<Integer, LinkedHashSet<Film>> films;
+    private final LinkedHashMap<Integer, LinkedHashSet<Film>> films;
 
 
     public Cinema() {
-        films = new TreeMap<>();
+        films = new LinkedHashMap<>();
     }
 
     private Set<Integer> getAllId() {
