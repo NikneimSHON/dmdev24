@@ -6,18 +6,23 @@ import java.nio.file.Path;
 import java.util.*;
 
 public final class FileUtil {
-    private static final String resources = "resources";
-    private static final String itemsName = "items-name.csv";
-    private static final String itemsPrice = "items-price.csv";
-    private static final String errors = "errors.csv";
-    private static final String result = "result.csv";
+    private static final String resourcesPath = "resources";
+    private static final String itemsNamePath = "items-name.csv";
+    private static final String itemsPricePath = "items-price.csv";
+    private static final String errorsPath = "errors.csv";
+    private static final String resultPath = "result.csv";
+    private static final String ID = "ID";
+    private static final String NAME = "NAME";
+    private static final String PRICE = "PRICE";
+    private static final int READ_ID = 0;
+    private static final int READ_NAME = 1;
 
     private FileUtil() {
 
     }
 
     private static Map<String, String> parsingFile(String fileName) {
-        File file = Path.of(resources, fileName).toFile();
+        File file = Path.of(resourcesPath, fileName).toFile();
         if (!checkValid(fileName, file)) {
             throw new IllegalArgumentException("Недействительный файл" + fileName);
 
@@ -29,8 +34,8 @@ public final class FileUtil {
             while ((line = fileReader.readLine()) != null) {
                 String[] split = line.split(",");
                 if (split.length > 0) {
-                    String key = split[0];
-                    String value = (split.length > 1 && !split[1].isEmpty()) ? split[1] : "Пусто";
+                    String key = split[READ_ID];
+                    String value = (split.length > READ_NAME && !split[READ_NAME].isEmpty()) ? split[READ_NAME] : "Пусто";
                     map.put(key, value);
                 }
             }
@@ -44,12 +49,12 @@ public final class FileUtil {
     public static void mergeFiles(String file1, String file2) {
         Map<String, String> name = parsingFile(file1);
         Map<String, String> price = parsingFile(file2);
-        File file = Path.of(resources, result).toFile();
-        List<String> emptyId = new ArrayList<>(List.of("id"));
+        File file = Path.of(resourcesPath, resultPath).toFile();
+        List<String> emptyId = new ArrayList<>(List.of(ID));
 
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))) {
             String resLine;
-            bufferedWriter.write("ID,NAME,PRICE");
+            bufferedWriter.write(ID + "," + NAME + "," + PRICE);
             bufferedWriter.newLine();
             for (String key : name.keySet()) {
                 String priceValue = price.get(key);
@@ -70,13 +75,17 @@ public final class FileUtil {
 
     }
 
-    private static void addErrors(List<String> error) throws IOException {
-        Path path = Path.of(resources, errors);
-        Files.write(path, error);
+    private static void addErrors(List<String> error) {
+        Path path = Path.of(resourcesPath, errorsPath);
+        try {
+            Files.write(path, error);
+        } catch (IOException e) {
+            throw new RuntimeException(e + "Ошибка записи");
+        }
 
     }
     private static boolean checkValid(String fileName, File file) {
-        if (!fileName.equals(itemsName) && !fileName.equals(itemsPrice)) {
+        if (!fileName.equals(itemsNamePath) && !fileName.equals(itemsPricePath)) {
             System.err.println("Передан неверный файл!");
             return false;
         }
